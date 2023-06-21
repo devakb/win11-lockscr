@@ -33,7 +33,7 @@
   cursor: none !important;
 }
 
-button#start-lockscreen {
+#start-lockscreen {
 /*   position: absolute;
   left: 50%;
   top: 50%;
@@ -177,6 +177,14 @@ button#start-lockscreen {
         let time_span = document.querySelector("#time span");
         time_span.innerHTML = `${hour}:${minute}`;
     }, 100);
+
+    document.addEventListener('keydown', function(event) {
+        // Check if the pressed key is the space key (keyCode 32)
+        if (event.keyCode === 32) {
+          // Request fullscreen mode on the document element
+          document.documentElement.requestFullscreen();
+        }
+      });
 
 </script>
 </body>
