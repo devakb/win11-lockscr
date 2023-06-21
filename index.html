@@ -154,6 +154,10 @@ button#start-lockscreen {
         let hour = time.getHours();
         let minute = time.getMinutes();
 
+        if(minute < 10){
+            minute = `0${minute}`;
+        }
+
         let month = time.toLocaleString('default', { month: 'long' });
         let fullWeekDayName = time.toLocaleString('default', { weekday: 'long' });
         let day = time.getDate();
