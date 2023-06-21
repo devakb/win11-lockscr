@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>
+      Lockscreen Simulation - Windows 11 - Amit Kumar Biswas
+    </title>
     <style>
     @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 * {
@@ -93,7 +95,7 @@ button#start-lockscreen {
         
     </div> -->
 
-    <button id="start-lockscreen">Start Lockscreen</button>
+    <button id="start-lockscreen">Start Now</button>
 
     <div id="bg-image" style="background-image: url('./892374.jpg'); display: none">
         <div id="date_time">
@@ -121,6 +123,14 @@ button#start-lockscreen {
 
         // move to full screen
         bg_image.requestFullscreen();
+    });
+
+    // if press enter key
+    document.addEventListener("keydown", (e) => {
+        if (e.key == "Enter") {
+            // remove from full screen
+            document.exitFullscreen();
+        }
     });
 
     // check if the user is in full screen
