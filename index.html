@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+#bg-image {
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh !important;
+  width: 100% !important;
+  overflow: hidden;
+  position: relative;
+}
+#bg-image.hideCursor {
+  cursor: none !important;
+}
+#bg-image.hideCursor * {
+  cursor: none !important;
+}
+
+button#start-lockscreen {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: rgb(6, 21, 79);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.44);
+  cursor: pointer;
+}
+
+#wifi_bat {
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+}
+#wifi_bat img {
+  width: 50px;
+}
+
+#fgpnt {
+  position: absolute;
+  left: 50%;
+  top: 50px;
+  transform: translateX(-50%);
+}
+#fgpnt img {
+  width: 40px;
+}
+
+#date_time {
+  position: absolute;
+  left: 50%;
+  top: 140px;
+  transform: translateX(-50%);
+  color: #fff !important;
+  background-color: transparent;
+  text-align: center;
+}
+#date_time #time {
+  font-size: 140px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+#date_time #date {
+  font-size: 20px;
+  font-weight: 500;
+}
+</style>
+</head>
+<body>
+
+    <!-- <div id="bg-image" style="background-image: url('./vs-code-window.png');">
+        
+    </div> -->
+
+    <button id="start-lockscreen">Start Lockscreen</button>
+
+    <div id="bg-image" style="background-image: url('./892374.jpg'); display: none">
+        <div id="date_time">
+            <div id="time">
+                <span>1:00</span>
+            </div>
+            <div id="date">Monday, June 20</div>
+        </div>
+
+        <div id="fgpnt"><img src="./image.png"></div>
+
+        <div id="wifi_bat"><img src="./wifi-bat.svg"></div>
+    </div>
+
+
+
+<script>
+
+
+    let start_lockscreen = document.querySelector("#start-lockscreen");
+    start_lockscreen.addEventListener("click", () => {
+        let bg_image = document.querySelector("#bg-image");
+        bg_image.style.display = "block";
+        start_lockscreen.style.display = "none";
+
+        // move to full screen
+        bg_image.requestFullscreen();
+    });
+
+    // check if the user is in full screen
+    document.addEventListener("fullscreenchange", () => {
+        if (document.fullscreenElement) {
+            let bg_image = document.querySelector("#bg-image");
+            bg_image.classList.add("hideCursor");
+        }else{
+            let bg_image = document.querySelector("#bg-image");
+            bg_image.classList.remove("hideCursor");
+            bg_image.style.display = "none";
+
+            start_lockscreen.style.display = "block";
+        }
+    });
+
+
+    let time = new Date;
+
+    setTimeout(() => {
+        let hour = time.getHours();
+        let minute = time.getMinutes();
+
+        let month = time.toLocaleString('default', { month: 'long' });
+        let fullWeekDayName = time.toLocaleString('default', { weekday: 'long' });
+        let day = time.getDate();
+
+        let date_span = document.querySelector("#date");
+        date_span.innerHTML = `${fullWeekDayName}, ${month} ${day}`;
+
+        let time_span = document.querySelector("#time span");
+        time_span.innerHTML = `${hour}:${minute}`;
+    }, 100);
+
+</script>
+</body>
+</html>
