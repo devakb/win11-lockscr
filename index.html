@@ -34,7 +34,7 @@
 }
 
 button#start-lockscreen {
-  position: absolute;
+/*   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -48,7 +48,15 @@ button#start-lockscreen {
   text-transform: uppercase;
   background-color: rgb(6, 21, 79);
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.44);
-  cursor: pointer;
+  cursor: pointer; */
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh !important;
+  width: 100% !important;
+  overflow: hidden;
+  position: relative;
+  cursor: none !important;
 }
 
 #wifi_bat {
@@ -96,7 +104,7 @@ button#start-lockscreen {
         
     </div> -->
 
-    <button id="start-lockscreen">Start Now</button>
+    <div id="start-lockscreen" style="background-image: url('./vs-code-window-js.png');"></div>
 
     <div id="bg-image" style="background-image: url('./892374.jpg'); display: none">
         <div id="date_time">
