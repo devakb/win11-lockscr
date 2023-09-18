@@ -110,6 +110,9 @@
             currTime = new Date();
             let hours = currTime.getHours();
             let minutes = currTime.getMinutes();
+
+            if(hours < 10) hours = '0' + hours;
+            if(minutes < 10) minutes = '0' + minutes;
             
             let monthFull = currTime.toLocaleString('default', { month: 'long' });
             let day = currTime.getDate();
