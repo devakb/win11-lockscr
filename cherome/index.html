@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amit Kumar Biswas</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div class="timebox">
+        <span id="time">10:50</span>
+        <span id="date">
+            September 10, 2020
+        </span>
+    </div>
+
+   <div class="apps-box-container">
+        <div class="apps-box">
+            <a href="https://www.google.com" class="app">
+                <img src="./google.png" alt="">
+            </a>
+            <a href="https://mail.google.com/mail" class="app">
+                <img src="./gmail.png" alt="">
+            </a>
+            <a href="https://www.youtube.com" class="app">
+                <img src="./youtube.png" alt="">
+            </a>
+        </div>
+   </div>
+
+
+
+
+   <div class="myself">
+        <h1>Amit Kumar Biswas</h1>
+        <h3>Software Engineer</h3>
+
+
+   </div>
+   
+<div class="balls">
+    <div class="ball red" style="top: 50%; left: 50%"></div>
+    <div class="ball yellow" style="top: 50%; left: 50%"></div>
+    <div class="ball blue" style="top: 50%; left: 50%"></div>
+    <div class="ball purple" style="top: 50%; left: 50%"></div>
+    <div class="ball green" style="top: 50%; left: 50%"></div>
+    <div class="ball red" style="top: 50%; left: 50%"></div>
+    <div class="ball yellow" style="top: 50%; left: 50%"></div>
+    <div class="ball blue" style="top: 50%; left: 50%"></div>
+    <div class="ball purple" style="top: 50%; left: 50%"></div>
+    <div class="ball green" style="top: 50%; left: 50%"></div>
+    <div class="ball red" style="top: 50%; left: 50%"></div>
+    <div class="ball yellow" style="top: 50%; left: 50%"></div>
+    <div class="ball blue" style="top: 50%; left: 50%"></div>
+    <div class="ball purple" style="top: 50%; left: 50%"></div>
+    <div class="ball green" style="top: 50%; left: 50%"></div>
+    <div class="ball red" style="top: 50%; left: 50%"></div>
+    <div class="ball yellow" style="top: 50%; left: 50%"></div>
+    <div class="ball blue" style="top: 50%; left: 50%"></div>
+    <div class="ball purple" style="top: 50%; left: 50%"></div>
+    <div class="ball green" style="top: 50%; left: 50%"></div>
+    <div class="ball red" style="top: 50%; left: 50%"></div>
+    <div class="ball yellow" style="top: 50%; left: 50%"></div>
+    <div class="ball blue" style="top: 50%; left: 50%"></div>
+    <div class="ball purple" style="top: 50%; left: 50%"></div>
+    <div class="ball green" style="top: 50%; left: 50%"></div>
+    <div class="ball red" style="top: 50%; left: 50%"></div>
+    <div class="ball yellow" style="top: 50%; left: 50%"></div>
+    <div class="ball blue" style="top: 50%; left: 50%"></div>
+    <div class="ball purple" style="top: 50%; left: 50%"></div>
+    <div class="ball green" style="top: 50%; left: 50%"></div>
+    <div class="ball red" style="top: 50%; left: 50%"></div>
+    <div class="ball yellow" style="top: 50%; left: 50%"></div>
+    <div class="ball blue" style="top: 50%; left: 50%"></div>
+    <div class="ball purple" style="top: 50%; left: 50%"></div>
+    <div class="ball green" style="top: 50%; left: 50%"></div>
+    <div class="ball red" style="top: 50%; left: 50%"></div>
+    <div class="ball yellow" style="top: 50%; left: 50%"></div>
+    <div class="ball blue" style="top: 50%; left: 50%"></div>
+    <div class="ball purple" style="top: 50%; left: 50%"></div>
+    <div class="ball green" style="top: 50%; left: 50%"></div>
+</div>
+   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+   <script>
+
+    const $balls = $('.ball');
+
+    function animateBalls() {
+        /* $balls.each(function () {
+            const top = Math.floor(Math.random() * 150);
+            const left = Math.floor(Math.random() * 150);
+            $(this).animate({
+                top: `${top}%`,
+                left: `${left}%`,
+            }, 7000);
+        }); */
+
+        setInterval(() => {
+            $balls.each(function () {
+                const top = Math.floor(Math.random() * 100);
+                const left = Math.floor(Math.random() * 100);
+                $(this).css({
+                    top: `${top}%`,
+                    left: `${left}%`,
+                });
+            });
+
+            currTime = new Date();
+            let hours = currTime.getHours();
+            let minutes = currTime.getMinutes();
+            
+            let monthFull = currTime.toLocaleString('default', { month: 'long' });
+            let day = currTime.getDate();
+            let year = currTime.getFullYear();
+    
+            $('#time').text(`${hours}:${minutes}`);
+            $('#date').text(`${monthFull} ${day}, ${year}`);
+        }, 90);
+
+        //animateBalls();
+  
+    }
+    
+    // Start the animation loop
+    animateBalls();
+
+
+   </script>
+</body>
+</html>
+

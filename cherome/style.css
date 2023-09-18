@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+body {
+  background-image: url("./a4X1cdC1QAc.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  cursor: url("./cursor.ico"), auto !important;
+}
+
+.timebox * {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 200;
+  color: #fff;
+  text-align: center;
+}
+.timebox #time {
+  font-size: 7rem;
+  text-transform: uppercase;
+  display: block;
+}
+.timebox #date {
+  display: block;
+  font-size: 1rem;
+  margin-top: -20px;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+}
+
+.apps-box-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.apps-box-container .apps-box {
+  background-color: rgba(255, 255, 255, 0.418);
+  border-radius: 50px;
+  padding: 7px 7px;
+  display: flex;
+  align-items: center;
+}
+.apps-box-container .apps-box .app {
+  margin: 0 5px;
+  width: 45px;
+  height: 45px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.apps-box-container .apps-box .app:hover {
+  background-color: #efefef;
+}
+.apps-box-container .apps-box .app img {
+  width: 25px;
+  height: 25px;
+}
+
+.myself {
+  z-index: 9;
+  position: absolute;
+  color: #fff;
+  bottom: 50px;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.myself h1 {
+  font-size: 2.8rem;
+  font-weight: 200;
+  margin-bottom: 10px;
+  text-shadow: 0 0 4px rgb(253, 253, 253);
+}
+.myself h3 {
+  letter-spacing: 5px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-shadow: 0 0 2px rgb(253, 253, 253);
+}
+
+.balls {
+  z-index: 1;
+  position: absolute;
+  width: 105%;
+  height: 50%;
+  bottom: -2%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.5s ease-in-out;
+}
+.balls .ball {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  transition: all 0.5s ease-in-out;
+  display: block;
+  border-radius: 50%;
+}
+.balls .ball.red {
+  background-color: rgb(221, 21, 21);
+  border: 1px solid red;
+  box-shadow: 0 0 10px 7px rgb(112, 36, 36), 0 0 10px 5px rgb(250, 12, 12);
+}
+.balls .ball.yellow {
+  background-color: rgb(199, 199, 35);
+  border: 1px solid yellow;
+  box-shadow: 0 0 2px 2px rgb(146, 146, 42), 0 0 10px 5px rgb(184, 184, 10);
+}
+.balls .ball.blue {
+  background-color: rgb(0, 193, 252);
+  border: 1px solid rgb(12, 91, 156);
+  box-shadow: 0 0 10px 7px rgb(11, 61, 95), 0 0 10px 5px rgb(4, 105, 221);
+}
+.balls .ball.purple {
+  background-color: rgb(255, 0, 255);
+  border: 1px solid rgb(156, 12, 156);
+  box-shadow: 0 0 10px 7px rgb(95, 11, 95), 0 0 10px 5px rgb(221, 4, 221);
+}
+.balls .ball.green {
+  background-color: rgb(0, 255, 0);
+  border: 1px solid rgb(12, 156, 12);
+  box-shadow: 0 0 10px 7px rgb(11, 95, 11), 0 0 10px 5px rgb(4, 221, 4);
+}/*# sourceMappingURL=style.css.map */
