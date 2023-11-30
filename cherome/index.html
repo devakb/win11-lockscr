@@ -90,8 +90,8 @@
     let name = new URLSearchParams(window.location.search).get('name');
     let desg = new URLSearchParams(window.location.search).get('desg');
 
-    document.getElementById('name').innerHTML = name;
-    document.getElementById('desg').innerHTML = desg;
+    document.getElementById('name').innerHTML = name ?? "Amit Kumar Biswas";
+    document.getElementById('desg').innerHTML = desg ?? "Software Engineer";
 
     const $balls = $('.ball');
 
