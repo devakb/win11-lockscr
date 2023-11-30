@@ -34,8 +34,8 @@
 
 
    <div class="myself">
-        <h1>Amit Kumar Biswas</h1>
-        <h3>Software Engineer</h3>
+        <h1 id="name">Amit Kumar Biswas</h1>
+        <h3 id="desg">Software Engineer</h3>
 
 
    </div>
@@ -84,6 +84,14 @@
 </div>
    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
    <script>
+
+ 
+
+    let name = new URLSearchParams(window.location.search).get('name');
+    let desg = new URLSearchParams(window.location.search).get('desg');
+
+    document.getElementById('name').innerHTML = name;
+    document.getElementById('desg').innerHTML = desg;
 
     const $balls = $('.ball');
 
